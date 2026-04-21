@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Entity Recognition Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-text {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .entities {
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Named Entity Recognition Result</h2>
+        <div class="input-text">
+            <h3>Input Text:</h3>
+            <p>{{ input_text }}</p>
+        </div>
+        <div class="entities">
+            <h3>Named Entities:</h3>
+            {{ entities_html | safe }}
+        </div>
+        <a href="/">Analyze Another Text</a>
+        <a href="/exit">Exit</a>
+    </div>
+</body>
+</html>
