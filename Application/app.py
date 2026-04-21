@@ -2,11 +2,12 @@ from flask import Flask, render_template, request
 import spacy
 from spacy import displacy
 from transformers import BertTokenizer
+import os
 
 app = Flask(__name__)
 
 # Load spaCy model
-nlp = spacy.load("en_core_web_trf")
+nlp = spacy.load("en_core_web_sm")
 
 # Load BERT tokenizer
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
@@ -40,3 +41,7 @@ def exit():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
